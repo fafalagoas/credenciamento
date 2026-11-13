@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Credenciamento de Imprensa | FAF</title>
+<meta name="description" content="Credenciamento de imprensa da Federação Alagoana de Futebol.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="https://gerador-artes.vercel.app/assets/logos/faf.png">
+<meta charset="utf-8">
+<style>
+@font-face{font-family:Prometo;src:url(https://gerador-artes.vercel.app/fonts/prometo/Prometo-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Prometo;src:url(https://gerador-artes.vercel.app/fonts/prometo/Prometo-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Prometo;src:url(https://gerador-artes.vercel.app/fonts/prometo/Prometo-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:Prometo;src:url(https://gerador-artes.vercel.app/fonts/prometo/Prometo-Black.ttf) format("truetype");font-weight:900;font-display:swap}
+:root{--bg:#F7F8F9;--card:#fff;--ink:#221E1F;--muted:#55575B;--soft:#F1F2F4;--line:#E4E6EA;--brand:#ED1B23;--brand-solid:#D81119;--ok:#00A650;--ring:#005BAB}
+@media (prefers-color-scheme:dark){:root{--bg:#0B0C0E;--card:#131417;--ink:#F4F4F5;--muted:#A6A8AD;--soft:#1A1B1F;--line:#2A2C31;--ok:#17C879;--ring:#4C9FE0;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Prometo,"Helvetica Neue",Arial,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line)}
+.topo{max-width:1080px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topo img{height:52px;width:auto;display:block}
+.topo .comp{height:58px}
+.faixa{height:4px;background:var(--brand)}
+main{max-width:1080px;margin:auto;padding:28px 20px 64px}
+h1{font-weight:900;font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0 0 6px;letter-spacing:-.01em}
+.meta{color:var(--muted);font-size:14px}
+.grade{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:22px}
+.jogo{background:var(--card);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;overflow:hidden}
+.jogo .corpo{padding:22px 16px 18px;text-align:center;flex:1}
+.escudos{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px}
+.escudo{width:72px;height:72px;position:relative;display:grid;place-items:center}
+.escudo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.mono{width:64px;height:64px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:900;font-size:18px;color:var(--muted)}
+.x{font-weight:300;font-size:26px;color:var(--muted)}
+.confronto{font-weight:700;font-size:17px;line-height:1.25}
+.rotulo{display:inline-block;font-size:12px;font-weight:700;color:var(--brand);margin-bottom:6px}
+.rodape{border-top:1px solid var(--line);background:var(--soft);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px}
+.encerrado{color:var(--brand);font-weight:700;font-size:14px}
+.btn{border:0;border-radius:8px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;background:var(--brand);color:#fff}
+.btn:hover{background:var(--brand-solid)}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.cheio{width:100%;padding:14px;margin-top:16px}
+.link{background:none;border:0;color:var(--muted);font:inherit;font-weight:500;cursor:pointer;padding:0;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;margin-top:18px}
+label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+input[type=text],input[type=email],input[type=tel],select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font:inherit;color:inherit}
+.check{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;cursor:pointer;font-weight:500}
+.check input{width:18px;height:18px;accent-color:var(--brand);flex:none}
+.check .mini{display:flex;align-items:center;gap:6px;flex:none}
+.check .mini .escudo{width:30px;height:30px}.check .mini .mono{width:28px;height:28px;font-size:10px}
+.campos{display:grid;gap:0 16px}
+@media(min-width:640px){.campos{grid-template-columns:1fr 1fr}}
+.err{color:var(--brand);font-weight:700;font-size:14px;margin-top:10px}
+.proto{font-weight:900;font-size:52px;color:var(--brand);line-height:1.1;margin:6px 0}
+.foto{display:flex;gap:16px;align-items:center;margin:6px 0 4px}
+.foto .quadro{width:96px;height:120px;border-radius:8px;border:1px dashed var(--line);background:var(--soft);display:grid;place-items:center;overflow:hidden;flex:none;color:var(--muted);font-size:12px;text-align:center;padding:4px}
+.foto .quadro img{width:100%;height:100%;object-fit:cover}
+.foto input{display:none}
+.btn.sec{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.btn.sec:hover{background:var(--line)}
+details.priv{margin-top:18px;border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--soft)}
+details.priv summary{cursor:pointer;font-weight:700;font-size:14px}
+details.priv p{font-size:13px;color:var(--muted);margin:8px 0}
+:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+</style>
+</head>
+<body>
+<header><div class="topo"><img src="https://gerador-artes.vercel.app/assets/logos/faf.png" alt="Federação Alagoana de Futebol"><span id="logoComp"></span></div><div class="faixa"></div></header>
+<main id="app"><p class="meta">Carregando partidas…</p></main>
+<script>
+// Ponte: no site público, "google.script.run" vira chamada à API do Apps Script (doPost).
+const API = 'https://script.google.com/macros/s/AKfycby2Rg-Hm7sT5nv3DceefZUpSm43jGgwTkHQLtywHetA4jL-NnYqJUmTVQe6ZYhdouA6-w/exec';
+window.google = { script: { get run() {
+  let ok = () => {}, falha = () => {};
+  const p = new Proxy({}, { get: (_, k) => k === 'withSuccessHandler' ? f => (ok = f, p) : k === 'withFailureHandler' ? f => (falha = f, p) :
+    (...args) => fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ acao: k, args }) })
+      .then(r => r.json()).then(j => j.ok ? ok(j.dados) : falha(new Error(j.erro))).catch(falha) });
+  return p;
+} } };
+</script>
+<script>
+const app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const url = u => /^https:\/\/[^\s"<>]+$/.test(String(u)) ? u : '';
+const inic = n => String(n).replace(/[^A-Za-zÀ-ú ]/g,'').split(/\s+/).filter(Boolean).map(w => w[0]).join('').slice(0,3).toUpperCase();
+let partidas = [], grupoAtual = null;
+// Redesenha a foto em até 720px no próprio aparelho: arquivo menor e sem metadados da câmera (ex.: localização).
+const fotos = {selfie: '', credencial: ''};
+function prepararFoto(arquivo, qual){
+  const previa = document.getElementById('previa-' + qual);
+  fotos[qual] = '';
+  if (!/^image\//.test(arquivo.type)) { previa.textContent = 'Arquivo não é imagem'; return; }
+  const img = new Image(), leitor = new FileReader();
+  leitor.onload = () => { img.src = leitor.result; };
+  img.onload = () => {
+    const lado = qual === 'credencial' ? 720 : 480, k = Math.min(1, lado / Math.max(img.width, img.height));
+    const c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    fotos[qual] = c.toDataURL('image/jpeg', 0.82);
+    previa.innerHTML = `<img src="${fotos[qual]}" alt="Foto enviada">`;
+  };
+  img.onerror = () => { previa.textContent = 'Não foi possível ler a foto'; };
+  leitor.readAsDataURL(arquivo);
+}
+// escudo que não carrega some e deixa as iniciais aparecerem
+document.addEventListener('error', e => { const i = e.target; if (i.tagName === 'IMG' && i.closest('.escudo')) i.outerHTML = `<span class="mono">${esc(inic(i.alt))}</span>`; }, true);
+
+const escudo = (src, nome) => `<span class="escudo">${url(src) ? `<img src="${esc(url(src))}" alt="${esc(nome)}">` : `<span class="mono">${esc(inic(nome))}</span>`}</span>`;
+
+const chaveGrupo = p => p.competicaoId || p.competicao;
+function grupos(){
+  const g = {};
+  partidas.forEach(p => { const k = chaveGrupo(p); (g[k] = g[k] || {chave: k, nome: p.competicao, logo: p.logo, jogos: []}).jogos.push(p); });
+  return Object.values(g);
+}
+
+function inicio(){ const g = grupos(); if (g.length > 1) competicoes(g); else { grupoAtual = g[0] ? g[0].chave : null; grade(); } }
+
+function competicoes(g){
+  grupoAtual = null;
+  app.innerHTML = `<h1>Credenciamento de imprensa</h1>
+  <p class="meta">Escolha a competição.</p>
+  <div class="grade">${g.map(c => { const abertos = c.jogos.filter(j => j.aberta).length; return `<article class="jogo">
+    <div class="corpo">${url(c.logo) ? `<img src="${esc(url(c.logo))}" alt="" style="height:72px;max-width:100%;object-fit:contain;margin-bottom:12px">` : ''}
+      <div class="confronto">${esc(c.nome)}</div><div class="meta">${c.jogos.length} jogo(s)</div></div>
+    <div class="rodape">${abertos ? `<span class="meta">${abertos} com inscrições abertas</span><button class="btn" data-comp="${esc(c.chave)}">Ver jogos</button>` : `<span class="encerrado">Encerrado</span>`}</div>
+  </article>`; }).join('')}</div>`;
+}
+
+function grade(){
+  const lista = partidas.filter(p => grupoAtual === null || chaveGrupo(p) === grupoAtual);
+  const varias = grupos().length > 1;
+  const comp = lista[0] ? lista[0].competicao : 'Credenciamento de imprensa';
+  app.innerHTML = `${varias ? '<button class="link" data-competicoes>‹ Todas as competições</button>' : ''}<h1>${esc(comp).replace(/-/g, "\u2011")}</h1>
+  <p class="meta">Credenciamento de imprensa. Escolha a partida para solicitar sua credencial.</p>
+  <div class="grade">${lista.map(p => `<article class="jogo">
+    <div class="corpo"><span class="rotulo">${esc(p.jogo)}</span>
+      <div class="escudos">${escudo(p.escudoMandante, p.mandante)}<span class="x">×</span>${escudo(p.escudoVisitante, p.visitante)}</div>
+      <div class="confronto">${esc(p.mandante)} x ${esc(p.visitante)}</div>
+      <div class="meta">${esc(p.local)}</div>
+      <div class="meta">${esc(p.data)} às ${esc(p.hora)}</div></div>
+    <div class="rodape">${p.aberta ? `<span class="meta">Inscrições abertas</span><button class="btn" data-ir="${esc(p.id)}">+ Credenciar</button>` : `<span class="encerrado">Encerrado</span>`}</div>
+  </article>`).join('')}</div>`;
+}
+
+const ROTULOS = {cpf: 'CPF', telefone: 'celular', associacao: 'credencial de associação', fotoCredencial: 'foto da credencial', selfie: 'foto do rosto', funcao: 'função', veiculo: 'veículo', tipo: 'tipo de veículo'};
+let campos = [];
+const usa = c => campos.includes(c);
+const caixaFoto = (qual, titulo, ajuda, captura) => `<label for="arq-${qual}">${titulo}</label>
+    <div class="foto"><div class="quadro" id="previa-${qual}">Sem foto</div>
+      <div><input type="file" id="arq-${qual}" accept="image/*" capture="${captura}">
+        <button type="button" class="btn sec" data-foto="${qual}">Tirar ou escolher foto</button>
+        <p class="meta" style="margin:8px 0 0">${ajuda}</p></div></div>`;
+
+function formulario(idInicial){
+  const inicial = partidas.find(p => p.id === idInicial);
+  campos = inicial.campos || [];
+  const abertas = partidas.filter(p => p.aberta && chaveGrupo(p) === chaveGrupo(inicial));
+  const dadosAviso = ['nome', 'e-mail'].concat(campos.map(c => ROTULOS[c])).join(', ');
+  fotos.selfie = ''; fotos.credencial = '';
+  app.innerHTML = `<button class="link" data-voltar>‹ Voltar aos jogos</button>
+  <h1>Solicitar credencial</h1>
+  <p class="meta">${esc(inicial.competicao)}. A FAF analisa o pedido e responde por e-mail.</p>
+  <form id="f" class="card" novalidate>
+    <label style="margin-top:0">Partidas que você vai cobrir</label>
+    ${abertas.map(p => `<label class="check"><input type="checkbox" name="partida" value="${esc(p.id)}" ${p.id === idInicial ? 'checked' : ''}>
+      <span class="mini">${escudo(p.escudoMandante, p.mandante)}${escudo(p.escudoVisitante, p.visitante)}</span>
+      <span><b>${esc(p.jogo)}: ${esc(p.mandante)} x ${esc(p.visitante)}</b><br><span class="meta">${esc(p.data)} às ${esc(p.hora)} · ${esc(p.local)}</span></span></label>`).join('')}
+    ${usa('selfie') ? caixaFoto('selfie', 'Foto do rosto', 'Rosto de frente, sem óculos escuros ou boné. Usada só para conferir sua identidade na entrada do estádio.', 'user') : ''}
+    <div class="campos">
+      <div><label for="nome">Nome completo</label><input type="text" id="nome" autocomplete="name"></div>
+      ${usa('cpf') ? '<div><label for="cpf">CPF</label><input type="text" id="cpf" inputmode="numeric" placeholder="000.000.000-00"></div>' : ''}
+      <div><label for="email">E-mail</label><input type="email" id="email" autocomplete="email"></div>
+      <div><label for="email2">Confirme o e-mail</label><input type="email" id="email2"></div>
+      ${usa('telefone') ? '<div><label for="telefone">Celular / WhatsApp</label><input type="tel" id="telefone" autocomplete="tel" placeholder="(82) 9 0000-0000"></div>' : ''}
+      ${usa('funcao') ? `<div><label for="funcao">Função</label><select id="funcao"><option value="">Selecione</option>${['Fotógrafo','Repórter','Cinegrafista','Narrador','Comentarista','Produtor','Técnico','Páginas/Influenciador','Comunicação/Clube'].map(x=>`<option>${x}</option>`).join('')}</select></div>` : ''}
+      ${usa('veiculo') ? '<div><label for="veiculo">Veículo de comunicação (ou @ do perfil)</label><input type="text" id="veiculo"></div>' : ''}
+      ${usa('tipo') ? `<div><label for="tipo">Tipo de veículo / colete</label><select id="tipo"><option value="">Selecione</option>${['Foto','TV','Rádio','Jornal/Portal','Influencer','Clube'].map(x=>`<option>${x}</option>`).join('')}</select></div>` : ''}
+      ${usa('associacao') ? '<div><label for="associacao">Credencial de associação com número</label><input type="text" id="associacao" placeholder="Ex.: ACDA 0000 (ACEA, ARFOC, ACDA)"></div>' : ''}
+    </div>
+    ${usa('fotoCredencial') ? caixaFoto('credencial', 'Foto da credencial de associação', 'Foto legível da sua credencial atual, frente com nome e número.', 'environment') : ''}
+    <details class="priv"><summary>Aviso de privacidade</summary>
+      <p><b>Quem trata seus dados:</b> Federação Alagoana de Futebol (FAF), Diretoria de Comunicação e Marketing. Contato para dúvidas, correção ou exclusão: contato@futeboldealagoas.net.</p>
+      <p><b>Para quê:</b> analisar seu pedido de credenciamento de imprensa, avisar o resultado por e-mail e controlar o acesso ao estádio nas partidas escolhidas. Não usamos seus dados para outra finalidade nem os vendemos.</p>
+      <p><b>Quais dados:</b> ${esc(dadosAviso)}.${usa('selfie') || usa('fotoCredencial') ? ' As fotos servem apenas para confirmar sua identidade e sua atuação como imprensa.' : ''}</p>
+      <p><b>Quem vê:</b> apenas a equipe de credenciamento da FAF e a portaria, em sistema protegido por senha. Nada é publicado.</p>
+      <p><b>Por quanto tempo:</b> ${usa('selfie') || usa('fotoCredencial') ? 'as fotos são apagadas automaticamente 30 dias após a sua última partida. ' : ''}Os demais dados ficam guardados pelo tempo necessário ao controle e ao histórico de credenciamento, e depois são eliminados.</p>
+      <p><b>Seus direitos:</b> pela LGPD (Lei 13.709/2018), você pode pedir acesso, correção ou exclusão dos seus dados pelo contato acima.</p>
+    </details>
+    <label class="check" style="margin-top:12px"><input type="checkbox" id="ciencia"><span>Li as regras de credenciamento e o aviso de privacidade e concordo com o uso dos meus dados para este credenciamento. Sei que enviar o pedido não garante aprovação.</span></label>
+    <div class="err" id="erro" role="alert"></div>
+    <button class="btn cheio" id="enviar">Enviar solicitação</button>
+  </form>`;
+  document.getElementById('f').addEventListener('submit', enviar);
+  document.querySelectorAll('input[type=file]').forEach(i => i.onchange = e => { const a = e.target.files[0]; if (a) prepararFoto(a, i.id.replace('arq-', '')); });
+  scrollTo(0,0);
+}
+
+function enviar(ev){
+  ev.preventDefault();
+  const v = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  const erro = t => { document.getElementById('erro').textContent = t; };
+  const ids = [...document.querySelectorAll('input[name=partida]:checked')].map(x => x.value);
+  if(!ids.length) return erro('Escolha pelo menos uma partida.');
+  if(!v('nome')) return erro('Preencha o nome completo.');
+  for (const c of ['cpf', 'telefone', 'funcao', 'veiculo', 'tipo', 'associacao']) if (usa(c) && !v(c)) return erro(`Preencha: ${ROTULOS[c]}.`);
+  if(usa('selfie') && !fotos.selfie) return erro('Adicione uma foto do rosto.');
+  if(usa('fotoCredencial') && !fotos.credencial) return erro('Adicione a foto da credencial de associação.');
+  if(v('email').toLowerCase() !== v('email2').toLowerCase()) return erro('Os dois e-mails estão diferentes.');
+  if(!document.getElementById('ciencia').checked) return erro('Marque a ciência das regras e do aviso de privacidade.');
+  const btn = document.getElementById('enviar'); btn.disabled = true; btn.textContent = 'Enviando…'; erro('');
+  const dados = {nome:v('nome'), cpf:v('cpf'), email:v('email'), telefone:v('telefone'), funcao:v('funcao'), veiculo:v('veiculo'), tipo:v('tipo'), associacao:v('associacao'), ciencia: true, partidas: ids, foto: fotos.selfie, fotoCredencial: fotos.credencial};
+  google.script.run
+    .withSuccessHandler(r => {
+      if(!r.ok){ btn.disabled = false; btn.textContent = 'Enviar solicitação'; return erro(r.erro); }
+      app.innerHTML = `<div class="card" style="text-align:center;max-width:620px;margin:20px auto"><p class="meta" style="margin:0">Solicitação recebida. Guarde seu protocolo:</p>
+        <div class="proto">${esc(r.protocolo)}</div><p>Partida(s) pedida(s): <b>${r.partidas.map(esc).join(' e ')}</b>.</p>
+        <p class="meta">A FAF vai analisar e responder por e-mail para ${esc(dados.email)}. Isso ainda não é uma aprovação.</p>
+        <button class="link" data-voltar style="margin:8px 0 0">‹ Voltar aos jogos</button></div>`;
+      scrollTo(0,0);
+    })
+    .withFailureHandler(() => { btn.disabled = false; btn.textContent = 'Enviar solicitação'; erro('Falha de conexão. Tente de novo.'); })
+    .registrarInscricao(dados);
+}
+
+document.addEventListener('click', e => {
+  const ir = e.target.closest('[data-ir]'); if (ir) return formulario(ir.dataset.ir);
+  const comp = e.target.closest('[data-comp]'); if (comp) { grupoAtual = comp.dataset.comp; grade(); return scrollTo(0,0); }
+  if (e.target.closest('[data-competicoes]')) { competicoes(grupos()); return scrollTo(0,0); }
+  const f = e.target.closest('[data-foto]'); if (f) return document.getElementById('arq-' + f.dataset.foto).click();
+  if (e.target.closest('[data-voltar]')) { if (grupoAtual === null) inicio(); else grade(); scrollTo(0,0); }
+});
+
+google.script.run
+  .withSuccessHandler(p => {
+    partidas = p;
+    if (!p.length) app.innerHTML = '<h1>Credenciamento de imprensa</h1><div class="card">No momento não há partidas cadastradas.</div>'; else inicio();
+  })
+  .withFailureHandler(e => { app.innerHTML = '<div class="card"><p class="err">Não foi possível carregar. Atualize a página.</p></div>'; })
+  .partidasParaFormulario();
+</script>
+</body>
+</html>
